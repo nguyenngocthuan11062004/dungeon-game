@@ -12,7 +12,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
 public class MyGdxGame extends ApplicationAdapter {
-    SpriteBatch loNen;
+    SpriteBatch hero;
     Animation<TextureRegion> chayLen, chayXuong, chayTrai, chayPhai;
     Animation<TextureRegion> dungImLen, dungImXuong, dungImTrai, dungImPhai;
     Animation<TextureRegion> hoatAnhHienTai;
@@ -24,7 +24,7 @@ public class MyGdxGame extends ApplicationAdapter {
 
     @Override
     public void create() {
-        loNen = new SpriteBatch();
+        hero = new SpriteBatch();
         // Tải và khởi tạo hình ảnh và hoạt ảnh cho mỗi trạng thái di chuyển và đứng yên
         anhChayLen = new Texture("runup.png");
         anhChayXuong = new Texture("rundown.png");
@@ -104,14 +104,14 @@ public class MyGdxGame extends ApplicationAdapter {
         viTriX += diChuyenX * Gdx.graphics.getDeltaTime();
         viTriY += diChuyenY * Gdx.graphics.getDeltaTime();
 
-        loNen.begin();
-        loNen.draw(khungHienTai, viTriX, viTriY, 80, 80); // Vẽ nhân vật với kích thước gấp đôi
-        loNen.end();
+        hero.begin();
+        hero.draw(khungHienTai, viTriX, viTriY, 80, 80); // Vẽ nhân vật với kích thước gấp đôi
+        hero.end();
     }
 
     @Override
     public void dispose() {
-        loNen.dispose();
+        hero.dispose();
         anhChayLen.dispose();
         anhChayXuong.dispose();
         anhChayTrai.dispose();
