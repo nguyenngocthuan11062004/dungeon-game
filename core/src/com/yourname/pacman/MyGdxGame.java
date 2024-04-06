@@ -35,6 +35,7 @@ public class MyGdxGame extends ApplicationAdapter {
 
     @Override
     public void create() {
+        Gdx.input.setInputProcessor(new KeyboardController(this));// chạy input bàn phím từ file bàn phím contro
         batch = new SpriteBatch();
         initializeAnimations();
         hoatAnhHienTai = dungImXuong; // Mặc định bắt đầu với hướng đứng yên xuống
